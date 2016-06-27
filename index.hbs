@@ -6,15 +6,13 @@
     {{> "menu-activator-icon"}}
 </nav>
 
-<header class="main-header js-blog-bg-image {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
-    <div class="main-header-content">
-        {{#if @blog.logo}}
-            <div class="post-logo-container">
-                <a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo"/></a>
-            </div>
-        {{/if}}
-        <h1 class="page-title js-bg-check"><span>{{@blog.title}}</span></h1>
-        <h2 class="page-description js-bg-check"><span>{{@blog.description}}</span></h2>
+{{#if @blog.cover}}<div class='header-cover' style="background-image: url({{@blog.cover}})"></div>{{/if}}
+
+<header class='main' >
+    <div class='wrap'>
+        {{#if @blog.logo}}<div class='logo'><a href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="{{@blog.title}}" /></a></div>{{/if}}
+        <h1><a href='/'>{{@blog.title}}</a></h1>
+        <p class='title'>{{@blog.description}}</p>
     </div>
 </header>
 
